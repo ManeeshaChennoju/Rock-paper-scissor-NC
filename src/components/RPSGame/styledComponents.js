@@ -74,7 +74,16 @@ export const ImageCard = styled.div`
   justify-content: center;
   align-items: center;
 `
-export const Button = styled.button`
+// export const Button = styled.button`
+//   'data-testid': `${props.id.toLowerCase()}Button`
+//   border: none;
+//   background-color: transparent;
+//   align-self: ${props => (props.rules ? 'flex-end' : '')};
+// `
+export const Button = styled.button.attrs(props => ({
+  'data-testid': `${props.id.toLowerCase()}Button`,
+}))`
+  /* Your button styles */
   border: none;
   background-color: transparent;
   align-self: ${props => (props.rules ? 'flex-end' : '')};

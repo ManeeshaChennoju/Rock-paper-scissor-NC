@@ -148,11 +148,13 @@ class RPSGame extends Component {
     <SelectingContainer>
       {choicesList.map(eachItem => (
         <Button
+          dataTestid
           onClick={this.onClickSelectImage}
           type="button"
           key={eachItem.id}
+          id={eachItem.id}
           value={eachItem.id}
-          data-testid={`${eachItem.id.toLowerCase()}Button`}
+          //   data-testid={`${eachItem.id.toLowerCase()}Button`}
         >
           {console.log(
             `${eachItem.id.toLowerCase()}Button`,
