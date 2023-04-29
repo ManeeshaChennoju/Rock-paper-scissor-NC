@@ -7,7 +7,7 @@ export const AppContainer = styled.div`
   align-items: center;
   background-color: #223a5f;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding: 20px;
   font-family: 'Roboto';
 `
@@ -37,7 +37,8 @@ export const HeaderContainer = styled.div`
 export const HeadingsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  min-width: 200px;
+  width: 150px;
+  height: 150px;
   margin: 0px 20px 0px 20px;
 `
 export const Heading = styled.h1`
@@ -45,6 +46,9 @@ export const Heading = styled.h1`
   font-weight: bold;
   font-size: 24px;
   margin: 0;
+  @media screen (max-width: 767px) {
+    font-size: 18px;
+  }
 `
 export const ScoreCard = styled(HeadingsContainer)`
   background-color: white;
@@ -52,6 +56,7 @@ export const ScoreCard = styled(HeadingsContainer)`
   justify-content: center;
   align-items: center;
   margin: 5px;
+  padding: 10px;
 `
 export const ScoreCardHeading = styled.p`
   color: #223a5f;
@@ -59,6 +64,9 @@ export const ScoreCardHeading = styled.p`
   padding: 0;
   font-weight: bold;
   font-size: 24px;
+  @media screen (max-width: 767px) {
+    font-size: 18px;
+  }
 `
 
 export const Score = styled.p`
@@ -74,24 +82,26 @@ export const ImageCard = styled.div`
   justify-content: center;
   align-items: center;
 `
-// export const Button = styled.button`
-//   'data-testid': `${props.id.toLowerCase()}Button`
-//   border: none;
-//   background-color: transparent;
-//   align-self: ${props => (props.rules ? 'flex-end' : '')};
-// `
-export const Button = styled.button.attrs(props => ({
-  'data-testid': `${props.id.toLowerCase()}Button`,
-}))`
-  /* Your button styles */
+export const Button = styled.button`
   border: none;
   background-color: transparent;
   align-self: ${props => (props.rules ? 'flex-end' : '')};
 `
+// export const Button = styled.button.attrs(props => ({
+//   'data-testid': `${props.id.toLowerCase()}Button`,
+// }))`
+//   border: none;
+//   background-color: transparent;
+//   align-self: ${props => (props.rules ? 'flex-end' : '')};
+// `
 
 export const Image = styled.img`
-  width: ${props => (props.rules ? '600px' : '180px')};
-  height: ${props => (props.rules ? '600px' : '180px')};
+  width: ${props => (props.rules ? '100%' : '180px')};
+  height: ${props => (props.rules ? '' : '180px')};
+  @media screen (max-width: 767px) {
+    width: ${props => (props.rules ? '100%' : '140px')};
+    height: ${props => (props.rules ? '' : '140px')};
+  }
 `
 
 export const SelectingContainer = styled.ul`
@@ -116,6 +126,8 @@ export const CustomButton = styled.button`
   font-family: 'Algerian';
   padding: 5px 20px 5px 20px;
   border-radius: 5px;
+  font-weight: 700;
+  box-shadow: 0px 2px 4px 4px #4db8ff;
 `
 
 export const ResultsContainer = styled.div`
@@ -149,6 +161,7 @@ export const ResultText = styled.p`
 `
 
 export const PopupContainer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

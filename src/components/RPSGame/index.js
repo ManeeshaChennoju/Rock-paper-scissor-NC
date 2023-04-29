@@ -32,16 +32,19 @@ const RulesImgUrl =
 const choicesList = [
   {
     id: 'ROCK',
+    testId: 'rockButton',
     imageUrl:
       'https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/rock-image.png',
   },
   {
     id: 'SCISSORS',
+    testId: 'scissorsButton',
     imageUrl:
       'https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/scissor-image.png',
   },
   {
     id: 'PAPER',
+    testId: 'paperButton',
     imageUrl:
       'https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/paper-image.png',
   },
@@ -154,12 +157,8 @@ class RPSGame extends Component {
           key={eachItem.id}
           id={eachItem.id}
           value={eachItem.id}
-          //   data-testid={`${eachItem.id.toLowerCase()}Button`}
+          data-testid={eachItem.testId}
         >
-          {console.log(
-            `${eachItem.id.toLowerCase()}Button`,
-            '---------------------------------------',
-          )}
           <Image id={eachItem.id} src={eachItem.imageUrl} alt={eachItem.id} />
         </Button>
       ))}
